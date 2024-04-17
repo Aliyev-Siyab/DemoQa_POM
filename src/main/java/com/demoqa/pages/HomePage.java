@@ -23,4 +23,19 @@ public class HomePage extends BasePage {
         clickWithJS(widgets,0,300);
         return new SidePanel(driver);
     }
+
+    @FindBy(css=".top-card:nth-child(2)")
+    WebElement forms;
+    public SidePanel getForms() {
+        clickWithJS(forms,0,300);
+
+        return new SidePanel(driver);
+    }
+
+    @FindBy(css=".top-card:nth-child(5)")
+    WebElement interactions;
+    public SidePanel getInteractions() {
+        clickWithJS(interactions,0,300);
+        return new SidePanel(driver);
+    }
 }

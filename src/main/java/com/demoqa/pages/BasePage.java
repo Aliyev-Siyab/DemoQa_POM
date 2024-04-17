@@ -41,4 +41,17 @@ public abstract class BasePage {
         return new WebDriverWait(driver, Duration.ofSeconds(time))
                 .until(ExpectedConditions.textToBePresentInElement(element,text));
     }
+
+    public void hideIframes() {
+        hideAd();
+        hideFooter();
+    }
+
+    private void hideFooter() {
+        js.executeScript("document.querySelector('footer').style.display='none';");
+    }
+
+    private void hideAd() {
+        js.executeScript("document.getElementById('fixedban').style.display='none';");
+    }
 }

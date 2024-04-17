@@ -29,4 +29,18 @@ public class SidePanel extends BasePage{
         clickWithJS(selectMenu,0,600);
         return new SelectMenuPage(driver);
     }
+
+    @FindBy(xpath = "//span[.='Practice Form']")
+    WebElement practiceForm;
+    public PracticeFormPage selectPracticeForm() {
+        click(practiceForm);
+        return new PracticeFormPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Droppable']")
+    WebElement droppable;
+    public DroppablePage selectDroppable() {
+        clickWithJS(droppable,0,600);
+        return new DroppablePage(driver);
+    }
 }
