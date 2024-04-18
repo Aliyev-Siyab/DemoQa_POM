@@ -17,6 +17,7 @@ public class DroppablePage extends BasePage {
 
     public DroppablePage actionDragMe() {
         Actions actions = new Actions(driver);
+        pause(500);
         actions.dragAndDrop(dragMe, dropHere).perform();
         String text = dropHere.getText();
         if (text.equals("Dropped!")) {
@@ -24,6 +25,31 @@ public class DroppablePage extends BasePage {
         } else {
             System.out.println("FALL");
         }
+        return this;
+    }
+
+    public DroppablePage actionDragMeBy() {
+        Actions actions = new Actions(driver);
+        pause(500);
+        // Find x & y dragMe
+        int xOffset1 = dragMe.getLocation().getX();
+        int yOffset1 = dragMe.getLocation().getY();
+        System.out.println("xOffset1--->>>" + xOffset1 + "yOffSet1--->>>>>" + yOffset1);
+        int xOffset = dropHere.getLocation().getX();
+        int yOffset = dropHere.getLocation().getY();
+        System.out.println("xOffset--->>>" + xOffset + "------yOffSet--->>>>>" + yOffset);
+
+        xOffset = (xOffset - xOffset1) + 20 ;
+        yOffset = (yOffset - yOffset1) + 30;
+        actions.dragAndDropBy(dragMe, xOffset, yOffset).perform();
+
+        String text = dropHere.getText();
+        if (text.equals("Dropped!")) {
+            System.out.println("PASSED");
+        } else {
+            System.out.println("FALL");
+        }
+
         return this;
     }
 }

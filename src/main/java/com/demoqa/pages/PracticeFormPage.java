@@ -6,8 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-import java.sql.SQLOutput;
-
 public class PracticeFormPage extends BasePage{
     public PracticeFormPage(WebDriver driver) {
         super(driver);

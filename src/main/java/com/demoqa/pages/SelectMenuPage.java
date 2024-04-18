@@ -19,7 +19,6 @@ public class SelectMenuPage extends BasePage{
         Select select = new Select(oldSelectMenu);
         select.selectByVisibleText(color);
 
-
         List<WebElement> options = select.getOptions();
         System.out.println(select.getFirstSelectedOption().getText() + " is first");
         System.out.println("======================================================");

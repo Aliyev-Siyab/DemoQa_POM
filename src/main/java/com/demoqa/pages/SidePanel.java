@@ -43,4 +43,20 @@ public class SidePanel extends BasePage{
         clickWithJS(droppable,0,600);
         return new DroppablePage(driver);
     }
+
+    @FindBy(xpath = "//span[.='Broken Links - Images']")
+    WebElement brokenLinksImages;
+    public BrokenLinksImagesPage selectBrokenLinksImages() {
+        clickWithJS(brokenLinksImages,0,600);
+
+
+        return new BrokenLinksImagesPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Upload and Download']")
+    WebElement download;
+    public DownloadPage selectDownload() {
+        clickWithJS(download,0,600);
+        return new DownloadPage(driver);
+    }
 }
